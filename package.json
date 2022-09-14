@@ -1,13 +1,14 @@
 {
-  "name": "next-scrollreveal",
+  "name": "next-reveal",
   "version": "1.0.0",
-  "description": "",
+  "description": "The easiest way to animate your Next.js project",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Zoltan Fodor - @ritmillio",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "18.7.16",
