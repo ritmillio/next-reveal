@@ -40,7 +40,7 @@ const RevealList: React.FC<RevealListType> = ({ children, className, interval, o
     const ViewFactor = viewFactor === undefined || null ? reveal.viewFactor : viewFactor;
     const ViewOffset = viewOffset === undefined || null ? reveal.viewOffset : viewOffset;
     
-    const revealList = React.Children.map(children, (child: any, index) =>
+    const revealList: any = React.Children.map(children, (child: any) => 
         React.cloneElement(child, {
             ref: createRef()
         })
