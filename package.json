@@ -2,7 +2,9 @@
   "name": "next-reveal",
   "version": "1.0.0",
   "description": "The easiest way to animate your Next.js project",
-  "main": "index.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
@@ -12,9 +14,33 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm run prettier && npm run lint"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritmillio/next-reveal.git"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "nextjs",
+    "Next.js",
+    "scrollreveal",
+    "Scrollreveal.js",
+    "next-reveal",
+    "next.js animation",
+    "animation",
+    "transform",
+		"transition",
+    "reveal",
+    "scroll"
+  ],
   "author": "Zoltan Fodor - @ritmillio",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.0.2",
