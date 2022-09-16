@@ -9,6 +9,7 @@
 # Introduction
 <strong>next-reveal makes it easy to add awesome scroll animations to your Next.js project.</strong>
 ### If you want to learn more about Scrollreveal.js the full documentation can be found at [https://scrollrevealjs.org](https://scrollrevealjs.org)
+- 🐧 ⭐ If you like this project give me a Star ⭐ 🐧
 # Installation
 ```bash
 npm i next-reveal
