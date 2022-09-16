@@ -4,6 +4,7 @@
 	<h1 align="center">next-reveal</h1>
 </p>
 <p align="center">The easiest way to animate your Next.js app</p>
+<p align="center">A helper package to use Scrollreveal.js in your Next.js project</p>
 <p align="center"><a href="https://next-reveal.vercel.app/" align="center">Demo</a></p>
 
 # Introduction
