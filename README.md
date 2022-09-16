@@ -18,7 +18,7 @@ npm i next-reveal
 # Usage
 
 ### RevealWrapper
-You can animate single elements with RevealWrapper, just wrap your component inside RevealWrapper and base animate will be applied.
+You can animate single elements with RevealWrapper, just wrap your component inside RevealWrapper and base animation will be applied.
 
 Base usage
 ```js
@@ -26,8 +26,8 @@ import RevealWrapper from  'next-reveal'
 ```
 ```html
 <RevealWrapper>
-	<h1  className={styles.title}>
-		Welcome to <a  href="https://nextjs.org">Next.js!</a>
+	<h1 className={styles.title}>
+	    Welcome to <a  href="https://nextjs.org">Next.js!</a>
 	</h1>
 </RevealWrapper>
 ```
@@ -39,7 +39,7 @@ Custum animation
 </RevealWrapper>
 ```
 ### RevealList
-You can animate multiple elements which will result a sequence animation.
+You can animate multiple elements which will result in a sequence animation.
 
 Basic usage
 *Note that in RevealList you need to specify at least the delay and interval*
