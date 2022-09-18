@@ -4,7 +4,6 @@
 	<h1 align="center">next-reveal</h1>
 </p>
 <p align="center">The easiest way to animate your Next.js app</p>
-<p align="center">A helper package to use Scrollreveal.js in your Next.js project</p>
 <p align="center"><a href="https://next-reveal.vercel.app/" align="center">Demo</a></p>
 
 # Introduction
@@ -18,7 +17,7 @@ npm i next-reveal
 # Usage
 
 ### RevealWrapper
-You can animate single elements with RevealWrapper, just wrap your component inside RevealWrapper and base animation will be applied.
+You can animate single elements with RevealWrapper, just wrap your component inside RevealWrapper and base animate will be applied.
 
 Base usage
 ```js
@@ -26,8 +25,8 @@ import RevealWrapper from  'next-reveal'
 ```
 ```html
 <RevealWrapper>
-	<h1 className={styles.title}>
-	    Welcome to <a  href="https://nextjs.org">Next.js!</a>
+	<h1  className={styles.title}>
+		Welcome to <a  href="https://nextjs.org">Next.js!</a>
 	</h1>
 </RevealWrapper>
 ```
@@ -39,7 +38,7 @@ Custum animation
 </RevealWrapper>
 ```
 ### RevealList
-You can animate multiple elements which will result in a sequence animation.
+You can animate multiple elements which will result a sequence animation.
 
 Basic usage
 *Note that in RevealList you need to specify at least the delay and interval*
@@ -106,7 +105,64 @@ viewOffset: {
 	},
 }
 ```
- 
+
+### Prevent Flickering
+If you experience Flickering you can create helper ```css``` class to make ```RevealWrapper``` element or ```RevealList``` items ```visibility:hidden``` which will prevent flickering.
+
+#### Step 1: 
+Create a ```_document.tsx``` file in your pages directory if you don't have one. Inside your ```_document.tsx``` file you need to add ```sr``` class to the ```Html``` tag
+
+```js
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx:any) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      <Html lang='en' className='sr'>
+        <Head></Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+#### Step 2:
+Add helper classes to your ```global.css``` file
+ ```css
+html.sr .load-hidden {
+  visibility: hidden;
+}
+```
+#### Step 3:
+Add your ```load-hidden``` class to your elements where you use RevealWrapper or RevealList
+
+```js
+<RevealWrapper className="load-hidden" rotate={{x: 12,y:40,z:0}} origin='left' delay={200} duration={1000} distance='500px' reset={true} viewOffset={{top: 25, right:0, bottom: 10, left:5}}>
+	<h1 className='text-blue-700 text-6xl leading-5 mt-36'>
+		Welcome to <a className='focus:underline active:underline hover:underline' href="https://github.com/ritmillio/next-reveal">next-reveal!</a>
+	</h1>
+	<p className='text-sm mt-5 ml-2'>A package based on ScrollReveal</p>
+</RevealWrapper>
+```
+
+```js
+<RevealList interval={60} delay={500} className='flex flex-wrap items-center justify-center'>
+	<div className='load-hidden bg-blue-400 h-12 w-12 xl:h-16 xl:w-16 m-2'></div>
+	<div className='load-hidden bg-blue-400 h-12 w-12 xl:h-16 xl:w-16 m-2'></div>
+	<div className='load-hidden bg-blue-400 h-12 w-12 xl:h-16 xl:w-16 m-2'></div>
+	<div className='load-hidden bg-blue-400 h-12 w-12 xl:h-16 xl:w-16 m-2'></div>
+</RevealList>
+```
 
 # License
 
