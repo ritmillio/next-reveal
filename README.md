@@ -14,6 +14,10 @@
 ```bash
 npm i next-reveal
 ```
+or
+```bash
+yarn add next-reveal
+```
 # Usage
 
 ### RevealWrapper
