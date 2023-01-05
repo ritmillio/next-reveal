@@ -25,7 +25,7 @@ You can animate single elements with RevealWrapper, just wrap your component ins
 
 Base usage
 ```js
-import RevealWrapper from  'next-reveal'
+import { RevealWrapper } from  'next-reveal'
 ```
 ```html
 <RevealWrapper>
@@ -47,7 +47,7 @@ You can animate multiple elements which will result a sequence animation.
 Basic usage
 *Note that in RevealList you need to specify at least the delay and interval*
 ```js
-import RevealList from  'next-reveal'
+import { RevealList } from  'next-reveal'
 ```
 ```html
 <RevealList interval={60} delay={500}  className='flex flex-wrap items-center justify-center'>
