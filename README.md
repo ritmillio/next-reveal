@@ -47,6 +47,8 @@ You can animate multiple elements which will result a sequence animation.
 Basic usage
 *Note that in RevealList you need to specify at least the delay and interval*
 ```js
+'use client'
+
 import { RevealList } from  'next-reveal'
 ```
 ```html
